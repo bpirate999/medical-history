@@ -1,7 +1,11 @@
 MedicalHistory::Application.routes.draw do
-  resources :writings
+  #resources :writings
 
-  resources :patients
+  #resources :patients
+
+  resources :patients do
+    resources :writings
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

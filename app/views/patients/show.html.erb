@@ -20,5 +20,31 @@
   <%= @patient.description %>
 </p>
 
+<h2>Записи</h2>
+<% @patient.writings.each do |writing| %>
+  <%= div_for writing do %>
+  <p>
+    <strong>Добавлена <%= time_ago_in_words(writing.created_at) %></strong>
+    <%= h(writing.diagnosis) %>
+    <%= h(writing.treatment) %>
+  </p>
+  <% end %>
+ <% end %>
+
+<h2>Добавить запись</h2>
+<%= form_for([@patient, Writing.new]) do |f| %>
+  <p>
+  	<%= f.label :diagnosis %><br>
+  	<%= f.text_field :diagnosis %>
+  </p>
+  <p>
+  	<%= f.label :treatment %><br>
+  	<%= f.text_field :treatment %>
+  </p>
+  <p>
+  	<%= f.submit %>
+  </p>
+  <% end %>
+
 <%= link_to 'Edit', edit_patient_path(@patient) %> |
 <%= link_to 'Back', patients_path %>

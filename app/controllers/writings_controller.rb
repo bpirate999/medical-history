@@ -24,11 +24,13 @@ class WritingsController < ApplicationController
   # POST /writings
   # POST /writings.json
   def create
-    @writing = Writing.new(writing_params)
+    @patient = Patient.find(params[:patient_id])
+    @writing = @patient.writings.create(writing_params)
+    #redirect_to patient_path(@patient)
 
     respond_to do |format|
       if @writing.save
-        format.html { redirect_to @writing, notice: 'Writing was successfully created.' }
+        format.html { redirect_to @patient, notice: 'Writing was successfully created.' }
         format.json { render action: 'show', status: :created, location: @writing }
       else
         format.html { render action: 'new' }
