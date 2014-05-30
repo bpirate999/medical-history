@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Diagnosis:</strong>
+  <strong>Диагноз:</strong>
   <%= @writing.diagnosis %>
 </p>
 
 <p>
-  <strong>Treatment:</strong>
+  <strong>Лечение:</strong>
   <%= @writing.treatment %>
 </p>
 
 <p>
-  <strong>Patient:</strong>
+  <strong>Пациент:</strong>
   <%= @writing.patient %>
 </p>
 
-<%= link_to 'Edit', edit_writing_path(@writing) %> |
-<%= link_to 'Back', writings_path %>
+<%= link_to 'Редактировать', edit_writing_path(@writing) %> |
+<%= link_to 'Назад', writings_path %>

@@ -1,22 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>First name:</strong>
+  <strong>Имя:</strong>
   <%= @patient.first_name %>
 </p>
 
 <p>
-  <strong>Middle name:</strong>
+  <strong>Отчество:</strong>
   <%= @patient.middle_name %>
 </p>
 
 <p>
-  <strong>Last name:</strong>
+  <strong>Фамилия:</strong>
   <%= @patient.last_name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Описание:</strong>
   <%= @patient.description %>
 </p>
 
@@ -24,9 +24,10 @@
 <% @patient.writings.each do |writing| %>
   <%= div_for writing do %>
   <p>
-    <strong>Добавлена <%= time_ago_in_words(writing.created_at) %></strong>
-    <%= h(writing.diagnosis) %>
-    <%= h(writing.treatment) %>
+   
+    <%= 'Диагноз - ' + h(writing.diagnosis) %>
+    <br>
+    <%= 'Лечение - ' + h(writing.treatment) %>
   </p>
   <% end %>
  <% end %>
@@ -34,11 +35,11 @@
 <h2>Добавить запись</h2>
 <%= form_for([@patient, Writing.new]) do |f| %>
   <p>
-  	<%= f.label :diagnosis %><br>
+  	<%= f.label :Диагноз %><br>
   	<%= f.text_field :diagnosis %>
   </p>
   <p>
-  	<%= f.label :treatment %><br>
+  	<%= f.label :Лечение %><br>
   	<%= f.text_field :treatment %>
   </p>
   <p>
@@ -46,5 +47,5 @@
   </p>
   <% end %>
 
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>
+<%= link_to 'Редактировать', edit_patient_path(@patient) %> |
+<%= link_to 'Назад', patients_path %>
