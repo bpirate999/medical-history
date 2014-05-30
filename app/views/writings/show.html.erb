@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Diagnosis:</strong>
+  <%= @writing.diagnosis %>
+</p>
+
+<p>
+  <strong>Treatment:</strong>
+  <%= @writing.treatment %>
+</p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @writing.patient %>
+</p>
+
+<%= link_to 'Edit', edit_writing_path(@writing) %> |
+<%= link_to 'Back', writings_path %>
