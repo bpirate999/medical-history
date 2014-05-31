@@ -29,6 +29,12 @@
     <br>
     <%= 'Лечение - ' + h(writing.treatment) %>
   </p>
+
+  <p>
+  <%= link_to 'Destroy writing', [writing.patient, writing],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>
   <% end %>
  <% end %>
 
