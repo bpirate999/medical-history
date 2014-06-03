@@ -30,7 +30,7 @@ class WritingsController < ApplicationController
 
     respond_to do |format|
       if @writing.save
-        format.html { redirect_to @patient, notice: 'Writing was successfully created.' }
+        format.html { redirect_to @patient, notice: 'Запись успешно добавлена.' }
         format.json { render action: 'show', status: :created, location: @writing }
       else
         format.html { render action: 'new' }

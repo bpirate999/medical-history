@@ -31,3 +31,8 @@
 <br>
 
 <%= link_to 'Добавить пациента', new_patient_path %>
+<br>
+<%= form_tag import_patients_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import CSV" %>
+<% end %>

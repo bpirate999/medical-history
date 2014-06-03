@@ -61,6 +61,11 @@ class PatientsController < ApplicationController
     end
   end
 
+  def import
+    Patient.import(params[:file])
+    redirect_to patients_path, notice: "Пациенты загружены"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_patient
